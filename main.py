@@ -31,35 +31,50 @@
 
 # 3. Найти максимальное число из трех. Числа вводится с клавиатуры
 #
-first_number = int(input("Введите первое число: "))
-
-second_number = int(input("Введите второе число: "))
-
-third_number = int(input("Введите третье число: "))
-
-if first_number >= second_number and first_number >= third_number:
-    print (f"Наибольшее число: {first_number}")
-
-elif second_number >= first_number and second_number >= third_number:
-    print(f"Наибольшее число: {second_number}")
-
-else third_number >= first_number and third_number >= second_number:
-    print(f"Наибольшее число: {third_number}")
-
+# first_number = int(input("Введите первое число: "))
+#
+# second_number = int(input("Введите второе число: "))
+#
+# third_number = int(input("Введите третье число: "))
+#
+# if first_number >= second_number and first_number >= third_number:
+#     print (f"Наибольшее число: {first_number}")
+#
+# elif second_number >= first_number and second_number >= third_number:
+#     print(f"Наибольшее число: {second_number}")
+#
+# else third_number >= first_number and third_number >= second_number:
+#     print(f"Наибольшее число: {third_number}")
 
 # 4. Определить високосный год или нет.Число вводится с клавиатуры
 
-input_year = int("Введите год: ")
-
-
-
-# 5. Определить четное или нечетное число. Число вводится с клавиатуры
-
-
-# 6. Задания с повышенной сложностью на 100 баллов
+# input_year = int(input("Введите год: "))
 #
-# Найти корни квадратного уравнения и вывести их на экран, если они есть. Если корней нет, то вывести сообщение об этом. Конкретное квадратное уравнение определяется коэффициентами a, b, c, которые вводит пользователь.
-# Дана следующая функция y=f(x):
+# if input_year % 4 == 0:
+#     print("Год высокостный")
+# else:
+#     print("Год не высокостный")
+#
+# # 5. Определить четное или нечетное число. Число вводится с клавиатуры
+
+input_number = int(input("Введите число: "))
+
+if input_number % 2 == 0:
+    print("Число четное")
+else:
+    print("Число не четное")
+
+#  Задания с повышенной сложностью на 100 баллов
+#
+# 6. Найти корни квадратного уравнения и вывести их на экран, если они есть. Если корней нет, то вывести сообщение об этом. Конкретное квадратное уравнение определяется коэффициентами a, b, c, которые вводит пользователь.
+
+koef_a = input("Введите число a: ")
+
+koef_b = input("Введите число b: ")
+
+koef_c = input("Введите число c: ")
+
+# 7. Дана следующая функция y=f(x):
 # y = 2x – 10, если x > 0
 #
 # y = 0, если x = 0
