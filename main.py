@@ -1,118 +1,76 @@
-# 1. За день машина проезжает n километров. Сколько дней нужно, чтобы проехать маршрут длиной m километров?
-# Программа получает на вход числа n и m.
+# 1.Напишите программу для преобразования списка в кортеж
+#
+# import random
+#
+# list_size = int(input("Введите кол-во символов в списке: "))
+# random_upper_bound = int(input("Введите макисмальный размер числа: "))
+#
+# list1 = []
+#
+# for _ in range(0, list_size):
+#     list1.append(random.randint(0, random_upper_bound))
+#
+# tuple1 = tuple(list1)
+#
+# print(list1)
+#
+# print(tuple1)
+#
+# print(type(tuple1))
+#
+# 2. Напишите программу для замены последнего значения кортежей в списке
+#
+# Expected Output: [(10, 20, 100), (40, 50, 100), (70, 80, 100)]
+#
+sample_list = [(10, 20, 40), (40, 50, 60), (70, 80, 90)]
 
-# total_distance = int(input("Введите общее расстояние, км: "))
-#
-# distance_per_day = int(input("Введите кол-во километров, которое машина проезжает за день, км: "))
-#
-# if total_distance > 0 or distance_per_day > 0:
-#     amount_of_days = int(total_distance/distance_per_day)
-#     amount_of_hours = int((total_distance%distance_per_day)/distance_per_day*24)
-#
-#     print (f"Чтобы проехать {total_distance}км, машине понадобится {amount_of_days}д. {amount_of_hours} ч.")
-# else total_distance <= 0 or distance_per_day <= 0:
-#     print ("Значение должно быть больше 0. Пожалуйста, попробуйте снова.")
+new_list = []
+x = 0
+y = -1
 
-# 2. Пользователь вводит трехзначное число. Найдите сумму его цифр. (используйте %)
-#
-# three_digit_number = int(input("Введите целое, трехзначное число: "))
-#
-# if 100 <= three_digit_number <= 999:
-#     left_from_100 = int(three_digit_number//100)
-#     left_from_10 = int(three_digit_number%100//10)
-#     left_from_1 = int(three_digit_number%100%10)
-#
-#     sum_of_numbers = int(left_from_100 + left_from_10 + left_from_1)
-#
-#     print (f"Сумма трех цифр из числа {three_digit_number} равна: {sum_of_numbers}")
-#
-# elif three_digit_number <= 99 or three_digit_number >= 1000:
-#     print ("Пожалуйста, используйте только трехзначные числа")
-
-# 3. Найти максимальное число из трех. Числа вводится с клавиатуры
-#
-# first_number = int(input("Введите первое число: "))
-#
-# second_number = int(input("Введите второе число: "))
-#
-# third_number = int(input("Введите третье число: "))
-#
-# if first_number >= second_number and first_number >= third_number:
-#     print (f"Наибольшее число: {first_number}")
-#
-# elif second_number >= first_number and second_number >= third_number:
-#     print(f"Наибольшее число: {second_number}")
-#
-# else third_number >= first_number and third_number >= second_number:
-#     print(f"Наибольшее число: {third_number}")
-
-# 4. Определить високосный год или нет.Число вводится с клавиатуры
-
-# input_year = int(input("Введите год: "))
-#
-# if input_year % 4 == 0:
-#     print("Год высокостный")
-# else:
-#     print("Год не высокостный")
-#
-# # 5. Определить четное или нечетное число. Число вводится с клавиатуры
-
-# input_number = int(input("Введите число: "))
-#
-# if input_number % 2 == 0:
-#     print("Число четное")
-# else:
-#     print("Число не четное")
-
-#  Задания с повышенной сложностью на 100 баллов
-
-# 6. Найти корни квадратного уравнения и вывести их на экран, если они есть. Если корней нет,
-# то вывести сообщение об этом.
-# Конкретное квадратное уравнение определяется коэффициентами a, b, c, которые вводит пользователь.
-
-# print('Решаем уравнение a•x²+b•x+c=0')
-#
-# koef_a = input("Введите число a: ")
-# koef_b = input("Введите число b: ")
-# koef_c = input("Введите число c: ")
-#
-# koef_a = float(koef_a)
-# koef_b = float(koef_b)
-# koef_c = float(koef_c)
-#
-# discriminant = koef_b**2 - 4*koef_a*koef_c
-# print('Дискриминант = ' + str(discriminant))
-# if discriminant < 0:
-#     print('Корней нет')
-# elif discriminant == 0:
-#     x = -koef_b / (2 * koef_a)
-#     print('x = ' + str(x))
-# else:
-#     x1 = (-koef_b + discriminant ** 0.5) / (2 * koef_a)
-#     x2 = (-koef_b - discriminant ** 0.5) / (2 * koef_a)
-#     print("x₁ = " + str(x1))
-#     print("x₂ = " + str(x2))
+for item in sample_list:
+    new_list.append(list(item))
+    new_list[x][y] = 100
+    x += 1
 
 
-# 7. Дана следующая функция y=f(x):
-# y = 2x – 10, если x > 0
-#
-# y = 0, если x = 0
-#
-# y = 2 * |x| – 1, если x < 0
-#
-# Найти значение функции по x, который вводиться с клавиатуры
-#
-x = int(input("Введите значение х: "))
 
-if x > 0:
-    y = 2 * x - 10
-    print(y)
-elif x == 0:
-    y = 0
-    print(y)
-else:
-    x = x * -1
-    y = 2 * x - 1
-    print(y)
 
+
+print(new_list)
+#
+#
+#
+# 3. Напишите программу для поэлементного вычисления суммы заданных кортежей. Результатом должен быть кортеж.
+#
+#
+#
+# Input
+#
+# (1, 2, 3, 4)
+#
+# (3, 5, 2, 1)
+#
+# (2, 2, 3, 1)
+#
+#
+#
+# Output
+#
+# (6, 9, 8, 6)
+#
+#
+#
+# 4. Напишите программу, которая проверяет, присутствует ли А в наборе или нет. А вводится с клавиатуры
+#
+# 5. Напишите программу, чтобы проверить, не имеют ли два заданных набора (set) общих элементов.
+#
+# 6. Напишите программу для поиска элементов в данном наборе A (set), которых нет в другом наборе B.
+#
+# 7. Напишите программу, которая удаляет пересечение 2-го набора из 1-го набора.
+#
+#
+#
+# 8. Реализовать логику Union для двух списков (list), проверить работу алгоритма на set.union
+#
+# 9. Реализовать логику Difference для двух списков (list), проверить работу алгоритма на set.difference
