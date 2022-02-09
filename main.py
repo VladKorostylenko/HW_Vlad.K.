@@ -140,9 +140,56 @@
 #
 # set3 = set(list3)
 #
-# print(set3)
+# print(f"Числа которые встречаются в обоих наборах: {set3}")
 
 # 6. Напишите программу для поиска элементов в данном наборе A (set), которых нет в другом наборе B.
+
+import random
+
+print("Сгенерируйте два набора")
+
+set_size = int(input("Введите максимально допустимое кол-во символов в наборе: "))
+random_upper_bound = int(input("Введите макисмальный размер числа в наборе: "))
+
+set1 = set()
+set2 = set()
+set3 = set()
+
+for _ in range(0, set_size):
+    set1.add(random.randint(0, random_upper_bound))
+for _ in range(0, set_size):
+    set2.add(random.randint(0, random_upper_bound))
+
+print(f"1-й список для сравнения: {set1}")
+print(f"2-й список для сравнения: {set2}")
+
+list1 = []
+list2 = []
+list3 = []
+
+list1 = list(set1)
+list2 = list(set2)
+
+if list1 >= list2:
+    for i in list1:
+        for n in list2:
+            if i == n:
+                list3.append(n)
+                n += 1
+            else:
+                n += 1
+else:
+    for n in list2:
+        for i in list1:
+            if n == i:
+                list3.append(n)
+                i += 1
+            else:
+                i += 1
+
+set3 = set(list3)
+
+print(f"Числа которые встречаются в обоих наборах: {set3}")
 #
 # 7. Напишите программу, которая удаляет пересечение 2-го набора из 1-го набора.
 #
