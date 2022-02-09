@@ -67,34 +67,59 @@
 
 # 4. Напишите программу, которая проверяет, присутствует ли А в наборе или нет. А вводится с клавиатуры
 #
+# import random
+#
+# print("Сгенерируйте свой набор")
+#
+# set_size = int(input("Введите максимально допустимое кол-во символов в наборе: "))
+# random_upper_bound = int(input("Введите макисмальный размер числа: "))
+#
+# set1 = set()
+#
+# for _ in range(0, set_size):
+#     set1.add(random.randint(0, random_upper_bound))
+#
+# print(f"Список в котором бутет проверяться наличие числа: {set1}")
+#
+# a_number = int(input("Введите целое число, присутсвие которого вы хотите проверить в наборе: "))
+#
+# flag = 0
+#
+# for set_number in set1:
+#     if set_number == a_number:
+#         flag +=1
+#
+# if flag > 0:
+#     print(f"Число {a_number} есть в наборе - {set1}.")
+# else:
+#     print(f"Число {a_number} отсутствует в наборе - {set1}.")
+
+# 5. Напишите программу, чтобы проверить, не имеют ли два заданных набора (set) общих элементов.
 import random
 
-print("Сгенерируйте свой набор")
+print("Сгенерируйте два набора")
 
-set_size = int(input("Введите кол-во символов в наборе: "))
-random_upper_bound = int(input("Введите макисмальный размер числа: "))
+set_size = int(input("Введите максимально допустимое кол-во символов в наборе: "))
+random_upper_bound = int(input("Введите макисмальный размер числа в наборе: "))
 
 set1 = set()
+set2 = set()
 
 for _ in range(0, set_size):
     set1.add(random.randint(0, random_upper_bound))
+for _ in range(0, set_size):
+    set2.add(random.randint(0, random_upper_bound))
 
-print(f"Список в котором бутет проверяться наличие числа: {set1}")
+print(f"1-й список для сравнения: {set1}")
+print(f"2-й список для сравнения: {set2}")
 
-a_number = int(input("Введите целое число, присутсвие которого вы хотите проверить в наборе: "))
+x = 0
 
-flag = 0
+if set1 >= set2
+    for i in range(set1(0,-1)):
 
-for set_number in set1:
-    if set_number == a_number:
-        flag +=1
 
-if flag > 0:
-    print(f"Число {a_number} есть в списке - {set1}, в кол-ве {flag} штук.")
-else:
-    print(f"Число {a_number} отсутствует в списке - {set1}")
 
-# 5. Напишите программу, чтобы проверить, не имеют ли два заданных набора (set) общих элементов.
 #
 # 6. Напишите программу для поиска элементов в данном наборе A (set), которых нет в другом наборе B.
 #
