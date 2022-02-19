@@ -49,18 +49,47 @@
 #
 # 5. Дано натуральное число N. Вычислите сумму его цифр. Напишите рекурсивную функцию
 #
-# def rec_func(num):
-#     return num%10 + sum_digits(num//10) if num > 9 else num
+# def rec_func(N):
+#     return N%10 + sum_digits(N//10) if N > 9 else N
 #
 # print(rec_func(123))
 #
 # 6. Напишите рекурсивную функцию для вычисления числа Фибоначи
-
+#
+# Вариант для поиска конкретного числа.
+# def fibonacci(n):
+#     if n in (1, 2):
+#         return 1
+#     return fibonacci(n - 1) + fibonacci(n - 2)
+#
+# fibonacci_list_index = int(input("Введите порядковый номер числа из ряда Фибоначчи, которое вы хотите получить:" ))
+#
+# print(f"Число fibonacci(fibonacci_list_index))
 
 # 7. Напишите функцию для умножения всех чисел в списке. Рекурсивно
+
+# def mult_list(list):
+#     if list == 1:
+#         return list
+#     else:
+#         return list[-1] * mult_list(list[0]),
 #
+#
+# print(mult_list([1, 2, 3, 4]))
+#
+def multiply(lst):
+    if lst == 0:
+        return 0
+    else:
+        index = 0
+        return lst[index] * multiply(lst)
+
+lst = [1, 2, 3, 4, 5, 6]
+
+print(multiply(lst))
+
 # 8. Дано натуральное число N. Выведите слово YES, если число N является точной степенью двойки, или слово NO в противном случае. 8 - YES, 3 - NO
-#
+# #
 # 9. Создайте inner функцию для вычисления сложения следующим образом:
 # * Создайте внешнюю функцию, которая будет принимать два параметра, a и b
 # * Создайте внутреннюю функцию внутри внешней функции, которая будет вычислять сложение a и b
