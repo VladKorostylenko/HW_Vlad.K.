@@ -49,48 +49,62 @@
 #
 # 5. Дано натуральное число N. Вычислите сумму его цифр. Напишите рекурсивную функцию
 #
-# def rec_func(N):
-#     return N%10 + sum_digits(N//10) if N > 9 else N
+# def rec_func(num):
+#     return num%10 + sum_digits(num//10) if num > 9 else num
 #
 # print(rec_func(123))
 #
 # 6. Напишите рекурсивную функцию для вычисления числа Фибоначи
 #
-# Вариант для поиска конкретного числа.
-# def fibonacci(n):
-#     if n in (1, 2):
-#         return 1
-#     return fibonacci(n - 1) + fibonacci(n - 2)
+# def fibonachi(n):
+#     return n - 1 if n < 3 else fibonachi(n - 2) + fibonachi(n - 1)
 #
-# fibonacci_list_index = int(input("Введите порядковый номер числа из ряда Фибоначчи, которое вы хотите получить:" ))
-#
-# print(f"Число fibonacci(fibonacci_list_index))
+# n = int(input("\nВведите порядковый номер числа Фибоначчи: "))
+# print(f"Число Фибоначчи номер {n} равно {fibonachi(n)}")
 
 # 7. Напишите функцию для умножения всех чисел в списке. Рекурсивно
-
-# def mult_list(list):
-#     if list == 1:
-#         return list
-#     else:
-#         return list[-1] * mult_list(list[0]),
+#
+# import random
+#
+# LIST_MAX_LEN = 7
+# ELEM_NUM_MIN = 1
+# ELEM_NUM_MAX = 20
+# def multi_list(lst, n=0):
+#     return 1 if n >= len(lst) else lst[n] * multi_list(lst, n + 1)
 #
 #
-# print(mult_list([1, 2, 3, 4]))
+# list_orig = [random.randint(ELEM_NUM_MIN, ELEM_NUM_MAX) for _ in range(0, random.randint(2, LIST_MAX_LEN))]
+# print(f"Список: {list_orig}")
+# print(f"Произведение чисел из списка: {multi_list(list_orig)}")
 #
-def multiply(lst):
-    if lst == 0:
-        return 0
-    else:
-        index = 0
-        return lst[index] * multiply(lst)
-
-lst = [1, 2, 3, 4, 5, 6]
-
-print(multiply(lst))
-
 # 8. Дано натуральное число N. Выведите слово YES, если число N является точной степенью двойки, или слово NO в противном случае. 8 - YES, 3 - NO
-# #
+#
+# def is_power_2(num):
+#     if num == 2:
+#         return 'YES'
+#     elif num % 2 == 1:
+#         return 'NO'
+#     else:
+#         return is_power_2(num // 2)
+#
+#
+# n = int(input("\nВведите натуральное n = "))
+# print(f'\33[34mТочная степень двойки: {is_power_2(n)}')
 # 9. Создайте inner функцию для вычисления сложения следующим образом:
 # * Создайте внешнюю функцию, которая будет принимать два параметра, a и b
 # * Создайте внутреннюю функцию внутри внешней функции, которая будет вычислять сложение a и b
 # * Наконец, внешняя функция добавит 5 и вернет ее.
+#
+#
+# a = int(input("\nВведите a = "))
+# b = int(input("Введите b = "))
+#
+#
+# def inner(x, y):
+#     def sumxy():
+#         return x + y
+#
+#     return sumxy() + 5
+#
+#
+# print(f'\33[34mInner сумма a и b = {inner(a, b)}')
